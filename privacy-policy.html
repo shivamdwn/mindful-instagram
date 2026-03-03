@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Mindful Instagram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --chassis: #e8e4de;
+      --surface: #f2efea;
+      --dark: #2a2825;
+      --dark2: #1f1d1a;
+      --text: #2a2825;
+      --text-dim: #6a6660;
+      --text-faint: #8a8580;
+      --orange: #ff6b00;
+      --orange-dim: #cc5500;
+      --edge: #c8c4bb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--chassis);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* Noise texture */
+    body::before {
+      content: ''; position: fixed; inset: 0; opacity: 0.025; pointer-events: none; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    .page { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* Header */
+    .header {
+      display: flex; align-items: center; gap: 10px;
+      padding-bottom: 20px; margin-bottom: 32px;
+      border-bottom: 1px solid var(--edge);
+    }
+    .header-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 8px rgba(255,107,0,0.4);
+      flex-shrink: 0;
+    }
+    .header-brand {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.14em;
+    }
+    .header-version {
+      margin-left: auto;
+      font-size: 9px; color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    /* Title */
+    h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: 22px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .effective-date {
+      font-size: 10px; color: var(--text-faint);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 36px;
+    }
+
+    /* Content sections */
+    .section { margin-bottom: 32px; }
+
+    h2 {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--orange);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,107,0,0.12);
+    }
+
+    p {
+      font-size: 12px; line-height: 1.85;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: var(--text); font-weight: 500; }
+
+    /* LCD-style summary box */
+    .lcd-box {
+      background: var(--dark);
+      border-radius: 8px; padding: 20px 22px;
+      margin-bottom: 36px;
+      border: 1px solid rgba(0,0,0,0.15);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.08);
+      position: relative; overflow: hidden;
+    }
+    .lcd-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+      pointer-events: none;
+    }
+    .lcd-summary {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px; line-height: 2;
+      color: #8a9a8a;
+    }
+    .lcd-summary .highlight {
+      color: #3ddc84;
+      text-shadow: 0 0 6px rgba(61,220,132,0.3);
+    }
+    .lcd-summary .orange {
+      color: var(--orange);
+      text-shadow: 0 0 6px rgba(255,107,0,0.3);
+    }
+
+    /* Surface card for lists */
+    .surface-card {
+      background: var(--surface);
+      border: 1px solid var(--edge);
+      border-radius: 8px; padding: 16px 18px;
+      margin: 12px 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .surface-card p { margin-bottom: 8px; }
+    .surface-card p:last-child { margin-bottom: 0; }
+
+    /* Item rows */
+    .item-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 6px 0;
+    }
+    .item-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--orange); flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .item-dot.green { background: #3ddc84; }
+    .item-text { font-size: 11px; color: var(--text-dim); line-height: 1.7; }
+
+    /* Contact */
+    a { color: var(--orange); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.7; }
+
+    /* Footer */
+    .footer {
+      margin-top: 48px; padding-top: 20px;
+      border-top: 1px solid var(--edge);
+      text-align: center;
+    }
+    .footer-text {
+      font-size: 9px; color: var(--text-faint);
+      text-transform: uppercase; letter-spacing: 0.12em;
+    }
+
+    /* Screws */
+    .screws {
+      display: flex; justify-content: space-between;
+      padding: 0 4px; margin-bottom: 24px;
+    }
+    .screw {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, #d4d0c8, #b8b4ac);
+      border: 1px solid #a8a49c;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 24px 16px 60px; }
+      h1 { font-size: 18px; }
+      .lcd-box { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="screws">
+      <div class="screw"></div><div class="screw"></div><div class="screw"></div><div class="screw"></div>
+    </div>
+
+    <div class="header">
+      <div class="header-dot"></div>
+      <span class="header-brand">Mindful Instagram</span>
+      <span class="header-version">MIG-01 v3.3</span>
+    </div>
+
+    <h1>Privacy Policy</h1>
+    <div class="effective-date">Effective Date: March 3, 2026</div>
+
+    <!-- TL;DR LCD box -->
+    <div class="lcd-box">
+      <div class="lcd-summary">
+        <span class="highlight">Zero data collection.</span><br>
+        <span class="highlight">Zero external servers.</span><br>
+        <span class="highlight">Zero tracking.</span><br>
+        Everything runs <span class="orange">locally in your browser</span>.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>What This Extension Does</h2>
+      <p>Mindful Instagram is a Chrome extension that blocks distracting features on Instagram (Reels, Explore, feed, Stories) while keeping Messages, Create, and Profile accessible. It helps you use Instagram intentionally for communication, not mindless scrolling.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data We Collect</h2>
+      <p><strong>None.</strong> Mindful Instagram does not collect, transmit, store, or share any personal data whatsoever. We have no servers, no analytics, no telemetry, and no way to access anything about you or your browsing.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data Stored Locally on Your Device</h2>
+      <p>The extension stores the following data in your browser's local storage (<strong>chrome.storage</strong>). This data never leaves your device:</p>
+      <div class="surface-card">
+        <div class="item-row">
+          <div class="item-dot"></div>
+          <div class="item-text"><strong>Settings and preferences</strong> — toggle states (Home Feed, Stories, Notifications), Focus Lock status, cooldown duration, daily use counts.</div>
+        </div>
+        <div class="item-row">
+          <div class="item-dot"></div>
+          <div class="item-text"><strong>Usage tracking data</strong> — time spent on Instagram per day and number of times Instagram was opened. Stored as anonymous counters (e.g., "usage_2026_02_15: 840"), not tied to any identity.</div>
+        </div>
+        <div class="item-row">
+          <div class="item-dot"></div>
+          <div class="item-text"><strong>Housekeeping keys</strong> — last daily reset date, toggle reminder flags. These are automatically cleaned up.</div>
+        </div>
+      </div>
+      <p>All locally stored data is automatically purged after 30 days. You can also clear it at any time by removing the extension or clearing your browser data.</p>
+    </div>
+
+    <div class="section">
+      <h2>Instagram API Usage</h2>
+      <p>The extension makes one request to Instagram's direct messaging API endpoint (<strong>/api/v1/direct_v2/inbox/</strong>) to display the names of your recent message threads on the overlay screen. This request uses your existing Instagram session cookies and goes directly from your browser to Instagram — it does not pass through any external server. The response is cached locally for 60 seconds, then discarded.</p>
+    </div>
+
+    <div class="section">
+      <h2>Permissions Explained</h2>
+      <div class="surface-card">
+        <div class="item-row">
+          <div class="item-dot green"></div>
+          <div class="item-text"><strong>storage</strong> — saves your preferences and usage counters locally in the browser.</div>
+        </div>
+        <div class="item-row">
+          <div class="item-dot green"></div>
+          <div class="item-text"><strong>alarms</strong> — runs periodic checks (once per minute) for Focus Lock expiry, daily resets, and toggle auto-off timers.</div>
+        </div>
+        <div class="item-row">
+          <div class="item-dot green"></div>
+          <div class="item-text"><strong>host_permissions (instagram.com)</strong> — allows the content script to run on Instagram pages to hide distracting elements and show the overlay.</div>
+        </div>
+      </div>
+      <p>No other permissions are requested. The extension cannot access your browsing history, other websites, or any data outside of instagram.com.</p>
+    </div>
+
+    <div class="section">
+      <h2>Third-Party Services</h2>
+      <p><strong>None.</strong> The extension does not use any third-party analytics, advertising, crash reporting, or data processing services. Google Fonts is loaded for the popup interface styling — this is a static CSS resource and does not involve any user data transmission.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data Sharing and Selling</h2>
+      <p>We do not sell, transfer, or share any user data with any third party for any reason. There is no data to share — we collect nothing.</p>
+    </div>
+
+    <div class="section">
+      <h2>Children's Privacy</h2>
+      <p>The extension does not knowingly collect any information from anyone, including children under 13. Since no personal data is collected at all, COPPA compliance is inherent.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to This Policy</h2>
+      <p>If this privacy policy is updated, the changes will be reflected on this page with an updated effective date. The core commitment — zero data collection — will not change.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>For questions about this privacy policy or the extension, reach out on X (Twitter): <a href="https://x.com/shivamdwn" target="_blank" rel="noopener noreferrer">@shivamdwn</a></p>
+    </div>
+
+    <div class="footer">
+      <div class="footer-text">Mindful Instagram · Built by Shivam · Zero data, always</div>
+    </div>
+
+    <div class="screws" style="margin-top: 24px; margin-bottom: 0;">
+      <div class="screw"></div><div class="screw"></div><div class="screw"></div><div class="screw"></div>
+    </div>
+
+  </div>
+</body>
+</html>
